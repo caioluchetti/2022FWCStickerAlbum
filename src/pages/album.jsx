@@ -12,7 +12,7 @@ import {cromos} from '../component/cromos'
 const data = Object.values(cromos);
 console.log(typeof(data))
 
-function App() {
+function Album() {
   
   return (
     
@@ -20,10 +20,10 @@ function App() {
       {data && data.map(function(array){
             console.log(array.pais);
             return(
-                <div className="card">
+                <div className="card" >
                 <img src={array.imagem} className="img"></img>
                 <div className="TextCard">
-                    <h1 style={{fontSize:'5vh'}}>TESTE</h1>
+                    <h1 style={{fontSize:'3vh'}}>{array.pais}</h1>
                     <h2 style={{fontSize:'3vh'}}>QUANTIDADE: 10</h2>
                 </div>
     
@@ -46,4 +46,4 @@ function App() {
     }
     
     
-export default App;
+export default Album;

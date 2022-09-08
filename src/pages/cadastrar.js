@@ -7,7 +7,7 @@ import axios from '../axios';
 
 
 
-function App() {
+function Cadastrar() {
   const [fig, setFig] = useState(String)
   const [senha, setSenha] = useState(String)
   const [total, setTotal] = useState(0);
@@ -103,4 +103,4 @@ const postFiguras = async () => {
   );
 }
 
-export default App;
+export default Cadastrar;
