@@ -11,7 +11,7 @@ import Switch from "../component/Switch";
 
 function Each(props) {
 
-    console.log(props)
+    console.log()
 
     const [isEnabled, setIsEnabled] = useState(false);
     const toggleSwitch = () => setIsEnabled(previousState => !previousState);
