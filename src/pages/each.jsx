@@ -1,7 +1,7 @@
 import './login.css';
 import React, { useState, useContext, useEffect } from 'react';
 import image from './icon.png'    
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import InputMask from 'react-input-mask';
 import axios from '../axios';
 import {cromos} from '../component/cromos'
@@ -9,7 +9,7 @@ import Switch from "../component/Switch";
 
 
 
-function Each(props) {
+function Each() {
 
     console.log()
 
@@ -21,21 +21,21 @@ function Each(props) {
     const [cell, setCell] = useState('');
 
 
-
+    const { id } = useParams();
     
     useEffect(()=>{
         listFig();        
 
-        console.log(props.route.params.rota)
+        // console.log(props.route.params.rota)
 
       },[
 
-        props.route.params.rota
+        // props.route.params.rota
 
       ])
       
       let paramfig = {
-        PAGINA: props.route.params.rota
+        // PAGINA: props.route.params.rota
     }
 
 
@@ -96,7 +96,7 @@ function Each(props) {
     <div className="container">
         <Switch />
         <div className="card">
-
+          Data is {id}
         </div>
      
            

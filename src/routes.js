@@ -13,8 +13,11 @@ function Rotas(){
             <Routes>
                 <Route path="/" element={<Main/>} />
                 <Route path="/cadastrar" element={<Cadastrar/>} />
-                <Route path="/album" element={<Album/>} />
-                <Route path="/each:pais" element={<Each/>} />
+                
+                <Route path="/album" element={<Album/>} ></Route>
+                <Route path="/each/:id" element={<Each/>} />
+                
+               
             </Routes>
 
         </Router>
