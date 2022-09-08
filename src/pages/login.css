@@ -263,7 +263,7 @@
     width: 70vw;
     height: 110px;
     background-color: #FFFFFF;
-    border: 2px solid black;
+    border: 2px solid rgba(0, 0, 0, 0.02);
     border-radius: 16px;
     align-content: center;
     align-items: center;
@@ -271,17 +271,18 @@
     flex-direction: row;
     display: flex;
     margin-bottom: 10px;
+    box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 .img {
     margin-left: 10px;
-
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
     border-radius: 50%;
     position: relative;
     width:22vw;
     height: 70px;
     align-self: center;
-    border: 2px solid #9B072E;
+    border: 2px solid rgba(0, 0, 0, 0.1);
 }
 .TextCard{
     font-family: 'Poppins';
