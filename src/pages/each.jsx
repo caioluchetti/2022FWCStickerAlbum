@@ -29,13 +29,10 @@ function Each() {
   
     useEffect(()=>{   
         listFig()
-        // console.log(props.route.params.rota)
 
       },[
 
-        // props.route.params.rota
-
-      ])
+            ])
       
       let paramfig = {
          PAGINA: id
@@ -75,12 +72,12 @@ function Each() {
     .then((result) => {
         
 
-        alert("Sucesso",result.data,
+        alert(result.data,
        
           )
         listFig()
       }).catch((error) => {
-        alert("ERRO","FIGURINHA NÃO EXISTENTE")
+        alert("FIGURINHA NÃO EXISTENTE")
       });
 
   } else{
@@ -88,12 +85,12 @@ function Each() {
     .then((result) => {
         
 
-        alert("Sucesso",result.data,
+        alert(result.data,
        
           )
         listFig()
       }).catch((error) => {
-        alert("ERRO","FIGURINHA NÃO EXISTENTE")
+        alert("FIGURINHA NÃO EXISTENTE")
       });
 
   }
@@ -127,7 +124,7 @@ function Each() {
                     
                     <h1 style={{fontSize:'5vw', color:'white', textShadow:'2px 2px 8px #000000'}}>{array.PAGINA}</h1>
                     <h2 style={{fontSize:'4vw',fontStyle:'italic', color:'white', textShadow:'2px 2px 8px #000000'}} >{array.CODIGO}</h2>
-                    <h3 style={{fontSize:'4vw',fontWeight:'bold', color:'white', textShadow:'2px 2px 8px #000000'}}>Quantidade: X</h3>
+                    <h3 style={{fontSize:'4vw',fontWeight:'bold', color:'white', textShadow:'2px 2px 8px #000000'}}>Quantidade: {array.QUANTIDADE}</h3>
                     
                     </div>
                 
@@ -138,7 +135,7 @@ function Each() {
                     
                     <h1 style={{fontSize:'5vw', color:'white', textShadow:'2px 2px 8px #000000'}}>{array.PAGINA}</h1>
                     <h2 style={{fontSize:'4vw',fontStyle:'italic', color:'white', textShadow:'2px 2px 8px #000000'}} >{array.CODIGO}</h2>
-                    <h3 style={{fontSize:'4vw',fontWeight:'bold', color:'white', textShadow:'2px 2px 8px #000000'}}>Quantidade: X</h3>
+                    <h3 style={{fontSize:'4vw',fontWeight:'bold', color:'white', textShadow:'2px 2px 8px #000000'}}>Quantidade: {array.QUANTIDADE}</h3>
                     
                     </div>
                 
