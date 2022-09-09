@@ -23,11 +23,17 @@ function Album() {
   function handleClick1(array) {
     navigate(`/each/${array}`);
   }
-  
+  function handleClick() {
+    navigate("/");
+  }
 
   return (
     
-    <div className="containerMap">
+    <div className="containerMapalbum">
+      <div className='buttonVoltar' >
+        <button onClick={handleClick}>Voltar</button>
+      </div>
+
       {data && data.map(function(array){
             console.log(array.pais);
            

@@ -19,6 +19,24 @@
     align-content: center;
 
 }
+.containerzinho {
+
+    flex-direction: column;
+
+
+}
+.containerMapalbum {
+    margin-top: 10px;
+    width: 100vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+
+}
 .containerMap {
     margin-top: 10px;
     width: 100vw;

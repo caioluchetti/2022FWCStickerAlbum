@@ -20,9 +20,13 @@ function Each() {
     const [codfig, setCodfig] = useState('');
     const [cell, setCell] = useState('');
 
-
+    const navigate = useNavigate();
+  
     const { id } = useParams();
-   
+    function handleClick() {
+      navigate("/");
+    }
+  
     useEffect(()=>{   
         listFig()
         // console.log(props.route.params.rota)
@@ -97,6 +101,10 @@ function Each() {
   return (
     
     <div className="containerMap">
+      <div className="containerzinho">
+      <div className='buttonVoltar' >
+        <button onClick={handleClick}>Voltar</button>
+      </div>
       <div className="Switch">
 
      <div className="SwitchTextGreen">Adicionar </div>  <Switch
@@ -105,6 +113,8 @@ function Each() {
         handleToggle={() => setValue(!value)}
       /><div className="SwitchTextRed"> Remover </div>
       </div>
+      </div>
+     
 
       
       {vetor && vetor.map(function(array){
