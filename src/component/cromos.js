@@ -167,7 +167,7 @@ export const cromos = [
         imagem: require('../imgs/coca-cola.png'),
     },
     {
-        pais: "Fifa World Cup",
+        pais: "Copa do Mundo",
         rota: 'Copa do Mundo',
         imagem: require('../imgs/icon.png'),
     },
