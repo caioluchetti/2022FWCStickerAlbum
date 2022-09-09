@@ -11,21 +11,20 @@ import Switch from "../component/Switch";
 
 function Each() {
 
-    console.log()
+ 
 
     const [isEnabled, setIsEnabled] = useState(false);
     const toggleSwitch = () => setIsEnabled(previousState => !previousState);
-
+    const [value, setValue] = useState(false);
     const [vetor, setArray] = useState([]);
     const [codfig, setCodfig] = useState('');
     const [cell, setCell] = useState('');
 
 
     const { id } = useParams();
-    
-    useEffect(()=>{
-        listFig();        
-
+   
+    useEffect(()=>{   
+        Envio()
         // console.log(props.route.params.rota)
 
       },[
@@ -35,77 +34,73 @@ function Each() {
       ])
       
       let paramfig = {
-        // PAGINA: props.route.params.rota
+         PAGINA: id
     }
+    const data = Object.values(paramfig);
+    console.log(typeof(data))
+    console.log(paramfig)
+
+    async function Envio() {
+      
+
+      try {
+          
+              const response = await axios.post('/fig/listaespecifico',paramfig).catch(err => alert(err));
+              if (response) {
+                  console.log(response)
+                  setArray(response.data)
+              }
 
 
-      function listFig() {
-        //  console.log(cell)
-        //  console.log("teste")
-        //  console.log(paramfig)
-
-        const result2 =  axios.post('/fig/listaespecifico', paramfig)
-        .then((result2) =>{
-            console.log(result2.data)
-            setArray(result2.data)
-
-        }).catch((error) => {
-            console.error(error);
-        })
-
-
-    }
-
-    function postFiguras(paramfig){
-
-        console.log(paramfig);
-
-      if(!isEnabled){
-        const result = axios.post('/fig/cadastrar',paramfig)
-        .then((result) => {
-            
-
-           alert("Sucesso",result.data,
-           
-              )
-            listFig()
-          }).catch((error) => {
-           alert("ERRO","FIGURINHA NÃO EXISTENTE")
-          });
-  
-      } else{
-        const result = axios.post('/fig/remover',paramfig)
-        .then((result) => {
-            
-
-           alert("Sucesso",result.data,
-           
-              )
-            listFig()
-          }).catch((error) => {
-           alert("ERRO","FIGURINHA NÃO EXISTENTE")
-          });
-
+      } catch (err) {
+          alert(err)
       }
-        }
 
+
+
+
+
+
+  }
     
-  
   return (
     
-    <div className="container">
-        <Switch />
-        <div className="card">
-          Data is {id}
-        </div>
-     
+    <div className="containerMap">
+      <div className="Switch">
+
+     <div className="SwitchTextGreen">Adicionar </div>  <Switch
+        isOn={value}
+        onColor="#EF476F"
+        handleToggle={() => setValue(!value)}
+      /><div className="SwitchTextRed"> Remover </div>
+      </div>
+
+      
+      {vetor && vetor.map(function(array){
+                  return(
+                
+                <div className="cardfig" key={array.CODIGO}>
+                
+                <h1 style={{fontSize:'5vw', color:'white', textShadow:'2px 2px 8px #000000'}}>{array.PAGINA}</h1>
+                <h2 style={{fontSize:'4vw',fontStyle:'italic', color:'white', textShadow:'2px 2px 8px #000000'}} >{array.CODIGO}</h2>
+                <h3 style={{fontSize:'4vw',fontWeight:'bold', color:'white', textShadow:'2px 2px 8px #000000'}}>Quantidade: X</h3>
+                
+                </div>
+            
+            )
            
+
+      }
+        
+        
+      )}
+    </div>
 
     
         
         
     
-    </div>
+   
             
   
        

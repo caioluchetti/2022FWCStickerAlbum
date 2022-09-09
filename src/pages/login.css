@@ -26,8 +26,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     align-content: center;
+    flex-wrap: wrap;
 
 }
 .img-main{
@@ -291,4 +292,39 @@
     line-height: 40px;
     text-align:center;
     color: #097828;
+}
+.cardfig{
+    margin-top: 20px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    text-align:center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.308);
+    background-color: #cacac6;
+    width: 34vw;
+    height: 140px;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.Switch{
+    margin-top: 20px;
+    align-content: center;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70vw;
+    
+}
+
+.SwitchTextGreen{
+    color: green;
+    text-shadow:1px 1px 7px black;
+}
+.SwitchTextRed{
+    color: red;
+    text-shadow:1px 1px 7px black;
 }
