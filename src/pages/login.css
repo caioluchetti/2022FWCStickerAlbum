@@ -293,7 +293,7 @@
     text-align:center;
     color: #097828;
 }
-.cardfig{
+.cardfigS{
     margin-top: 20px;
     font-family: 'Poppins';
     font-style: normal;
@@ -301,7 +301,22 @@
     line-height: 40px;
     text-align:center;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.308);
-    background-color: #cacac6;
+    background-color: #7ea37e;
+    width: 34vw;
+    height: 140px;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.cardfigN{
+    margin-top: 20px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    text-align:center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.308);
+    background-color: #c95e5e;
     width: 34vw;
     height: 140px;
     border-radius: 10px;

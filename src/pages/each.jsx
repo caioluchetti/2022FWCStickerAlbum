@@ -24,7 +24,7 @@ function Each() {
     const { id } = useParams();
    
     useEffect(()=>{   
-        Envio()
+        listFig()
         // console.log(props.route.params.rota)
 
       },[
@@ -40,7 +40,7 @@ function Each() {
     console.log(typeof(data))
     console.log(paramfig)
 
-    async function Envio() {
+    async function listFig() {
       
 
       try {
@@ -62,7 +62,38 @@ function Each() {
 
 
   }
-    
+  function postFiguras(paramfig){
+
+    console.log(paramfig);
+
+  if(!value){
+    const result = axios.post('/fig/cadastrar',paramfig)
+    .then((result) => {
+        
+
+        alert("Sucesso",result.data,
+       
+          )
+        listFig()
+      }).catch((error) => {
+        alert("ERRO","FIGURINHA NÃO EXISTENTE")
+      });
+
+  } else{
+    const result = axios.post('/fig/remover',paramfig)
+    .then((result) => {
+        
+
+        alert("Sucesso",result.data,
+       
+          )
+        listFig()
+      }).catch((error) => {
+        alert("ERRO","FIGURINHA NÃO EXISTENTE")
+      });
+
+  }
+    }
   return (
     
     <div className="containerMap">
@@ -77,17 +108,35 @@ function Each() {
 
       
       {vetor && vetor.map(function(array){
+
+
+                if(array.POSSUI == true){
                   return(
                 
-                <div className="cardfig" key={array.CODIGO}>
+                    <div className="cardfigS" key={array.CODIGO} onClick={() => postFiguras(array)}>
+                    
+                    <h1 style={{fontSize:'5vw', color:'white', textShadow:'2px 2px 8px #000000'}}>{array.PAGINA}</h1>
+                    <h2 style={{fontSize:'4vw',fontStyle:'italic', color:'white', textShadow:'2px 2px 8px #000000'}} >{array.CODIGO}</h2>
+                    <h3 style={{fontSize:'4vw',fontWeight:'bold', color:'white', textShadow:'2px 2px 8px #000000'}}>Quantidade: X</h3>
+                    
+                    </div>
                 
-                <h1 style={{fontSize:'5vw', color:'white', textShadow:'2px 2px 8px #000000'}}>{array.PAGINA}</h1>
-                <h2 style={{fontSize:'4vw',fontStyle:'italic', color:'white', textShadow:'2px 2px 8px #000000'}} >{array.CODIGO}</h2>
-                <h3 style={{fontSize:'4vw',fontWeight:'bold', color:'white', textShadow:'2px 2px 8px #000000'}}>Quantidade: X</h3>
+                )
+                }else{
+                  return(
+                    <div className="cardfigN" key={array.CODIGO} onClick={() => postFiguras(array)}>
+                    
+                    <h1 style={{fontSize:'5vw', color:'white', textShadow:'2px 2px 8px #000000'}}>{array.PAGINA}</h1>
+                    <h2 style={{fontSize:'4vw',fontStyle:'italic', color:'white', textShadow:'2px 2px 8px #000000'}} >{array.CODIGO}</h2>
+                    <h3 style={{fontSize:'4vw',fontWeight:'bold', color:'white', textShadow:'2px 2px 8px #000000'}}>Quantidade: X</h3>
+                    
+                    </div>
                 
-                </div>
-            
-            )
+                  )
+                 
+                  
+                }
+                  
            
 
       }
