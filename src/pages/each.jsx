@@ -24,7 +24,7 @@ function Each() {
   
     const { id } = useParams();
     function handleClick() {
-      navigate("/");
+      navigate("/album");
     }
   
     useEffect(()=>{   
