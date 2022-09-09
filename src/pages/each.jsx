@@ -20,16 +20,16 @@ function Each() {
     const [codfig, setCodfig] = useState('');
     const [cell, setCell] = useState('');
 
+    
     const navigate = useNavigate();
   
     const { id } = useParams();
     function handleClick() {
       navigate("/album");
     }
-  
     useEffect(()=>{   
         listFig()
-
+        console.log(vetor)
       },[
 
             ])
