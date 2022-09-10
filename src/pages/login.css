@@ -361,3 +361,19 @@
     color: red;
     text-shadow:1px 1px 7px black;
 }
+
+.contador{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.TemosFaltam{
+    font-family: 'Poppins';
+    text-shadow: 1px 1px 7px black ;
+}
+
+.num{
+    font-family: 'Poppins';
+    text-shadow: 1px 1px 7px black ;
+}
