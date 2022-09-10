@@ -104,11 +104,11 @@ function Each() {
       </div>
       <div className="Switch">
 
-     <div className="SwitchTextGreen">Adicionar </div>  <Switch
+     <div className="SwitchTextGreen">Adicionar</div>  <Switch
         isOn={value}
         onColor="#EF476F"
         handleToggle={() => setValue(!value)}
-      /><div className="SwitchTextRed"> Remover </div>
+      /><div className="SwitchTextRed">Remover </div>
       </div>
       </div>
      
