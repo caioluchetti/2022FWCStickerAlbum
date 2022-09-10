@@ -95,7 +95,7 @@ function Album() {
         // console.log(vetor[index].somaTotal)
         return (
 
-          <div className="card" onClick={() => handleClick1(array.pais)}>
+          <div className="card" onClick={() => handleClick1(array.nome)}>
             <img src={array.imagem} className="img"></img>
             <div className="TextCard">
               <h1 style={{ fontSize: '3vh' }} key={array.pais}>{array.pais}</h1>
